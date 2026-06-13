@@ -1,0 +1,41 @@
+{
+  "indexes": [
+    {
+      "collection": "orders",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {"fieldPath": "tenantId", "order": "ASCENDING"},
+        {"fieldPath": "status", "order": "ASCENDING"},
+        {"fieldPath": "createdAt", "order": "DESCENDING"}
+      ]
+    },
+    {
+      "collection": "documents",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {"fieldPath": "tenantId", "order": "ASCENDING"},
+        {"fieldPath": "status", "order": "ASCENDING"},
+        {"fieldPath": "createdAt", "order": "DESCENDING"}
+      ]
+    },
+    {
+      "collection": "shipments",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {"fieldPath": "tenantId", "order": "ASCENDING"},
+        {"fieldPath": "status", "order": "ASCENDING"},
+        {"fieldPath": "updatedAt", "order": "DESCENDING"}
+      ]
+    },
+    {
+      "collection": "inventory",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {"fieldPath": "warehouseId", "order": "ASCENDING"},
+        {"fieldPath": "sku", "order": "ASCENDING"},
+        {"fieldPath": "quantity", "order": "ASCENDING"}
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

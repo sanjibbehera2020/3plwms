@@ -14,5 +14,9 @@
     ],
     "cleanUrls": true,
     "trailingSlashBehavior": "REMOVE"
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
   }
 }
