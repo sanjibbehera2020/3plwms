@@ -88,22 +88,32 @@ Updated in `src/lib/firebase.ts` with credentials for `wms-3pl-app` project:
 
 ## Future Deployments
 
-### To update your deployment:
+### Quick Deploy (Recommended)
+```bash
+npm run firebase:deploy
+```
+This runs: `build` → `restructure` → `firebase deploy`
 
-1. **Make changes** to your code
-2. **Build the project**:
+### Manual Steps
+1. **Build the project**:
    ```bash
    npm run build
+   ```
+2. **Restructure for Firebase** (automatically extracts client files):
+   ```bash
+   npm run firebase:restructure
    ```
 3. **Deploy to Firebase**:
    ```bash
    firebase deploy --only hosting --project wms-3pl-app
    ```
 
-### Or deploy everything (hosting + functions + database rules):
-```bash
-firebase deploy --project wms-3pl-app
-```
+### Scripts Included
+- **`npm run build:firebase`** - Build and restructure for Firebase
+- **`npm run firebase:restructure`** - Restructure existing build for Firebase
+- **`npm run firebase:deploy`** - Build, restructure, and deploy (one command!)
+- **`build-firebase.sh`** - Shell script for Linux/Mac automation
+- **`build-firebase.bat`** - Batch script for Windows automation
 
 ---
 

@@ -6,10 +6,18 @@
 // You can pass additional config via defineConfig({ vite: { ... } }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-// Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-// @cloudflare/vite-plugin builds from this — wrangler.jsonc main alone is insufficient.
+// For Firebase Hosting: Build as SPA only (no SSR)
+// To use SSR, deploy to Cloudflare Pages or use Firebase Cloud Functions
 export default defineConfig({
   tanstackStart: {
-    server: { entry: "server" },
+    // Build client-only for Firebase static hosting
+    ssr: false,
+  },
+  vite: {
+    build: {
+      // Output all files to dist root for Firebase Hosting
+      outDir: 'dist',
+      emptyOutDir: true,
+    },
   },
 });
